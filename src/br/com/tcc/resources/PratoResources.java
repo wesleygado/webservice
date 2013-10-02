@@ -10,6 +10,8 @@ import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 
 import br.com.tcc.exception.NoContentException;
+import br.com.tcc.model.IngredientePrato;
+import br.com.tcc.model.IngredientePratoBusiness;
 import br.com.tcc.model.Prato;
 import br.com.tcc.model.PratoBusiness;
 import br.com.tcc.utils.Constantes;
@@ -64,6 +66,8 @@ public class PratoResources {
      
     }
 	
+	
+	
 	@GET
     @Path("/delete/{id}")
     @Produces("application/json")
@@ -77,6 +81,19 @@ public class PratoResources {
     @Consumes("application/json")
     public String inserirPrato(Prato prato) {
 		return new PratoBusiness().inserir(prato);
+    }
+	
+	/**
+	 * Objetivo: apresentar o os pratos de um determinado restaurante
+	 * @param  int id
+	 * @return ArrayList<Prato> prato
+	 */
+	@GET
+    @Path("/restaurantePrato/{id}")
+    @Produces("application/json")
+    public ArrayList<Prato> buscar(@PathParam("id") int id){
+		return new PratoBusiness().buscarRestaurante(id);
+     
     }
 
 }

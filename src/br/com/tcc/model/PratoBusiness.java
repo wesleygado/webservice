@@ -8,12 +8,21 @@ import br.com.tcc.utils.Constantes;
 public class PratoBusiness {
 	
 	/**
-	 * Objetivo: buscar todos os prato cadastrados
+	 * Objetivo: buscar todos os pratos cadastrados
 	 * @return ArrayList<Prato>
 	 */
 	public ArrayList<Prato> buscarTodos() {
 	     PratoDAO pratoDAO = new PratoDAO();
 	     return pratoDAO.buscarTodos();
+	}
+	
+	/**
+	 * Objetivo: buscar todos os pratos dos restaurantes
+	 * @return ArrayList<Prato>
+	 */
+	public ArrayList<Prato> buscarRestaurante(int id) {
+	     PratoDAO pratoDAO = new PratoDAO();
+	     return pratoDAO.buscarRestaurante(id);
 	}
 	
 	//TODO Implementar busca por todos os pratos de um restaurante

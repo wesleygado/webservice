@@ -100,13 +100,13 @@ public class IngredienteDAO extends Conexao {
 	     conn = getConnection();
 	     Ingrediente ingrediente = null;
 	     try {
-	         stmt = conn.prepareStatement("SELECT * FROM INGREDIENTE WHERE IDINGREDIENTEs = ?");
+	         stmt = conn.prepareStatement("SELECT * FROM INGREDIENTE WHERE IDINGREDIENTES = ?");
 	         stmt.setInt(1, id);
 	         resultSet = stmt.executeQuery();
 	         while (resultSet.next()) {
 	             ingrediente = new Ingrediente();
 	             ingrediente.setIdIngredientes(resultSet.getInt("idIngredientes"));
-	             ingrediente.setNome(resultSet.getString("NOME"));             
+	             ingrediente.setNome(resultSet.getString("nome"));             
 	         }
 	     } catch (SQLException e) {
 	         e.printStackTrace();

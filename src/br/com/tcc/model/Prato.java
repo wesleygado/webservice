@@ -1,5 +1,7 @@
 package br.com.tcc.model;
 
+import java.util.ArrayList;
+
 import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlRootElement
@@ -9,6 +11,8 @@ public class Prato {
 	private double preco;
 	private String nome;
 	private int idRestaurante;
+	//private ArrayList<Ingrediente> ingredientes;
+	
 	/**
 	 * @return the idPrato
 	 */
@@ -69,7 +73,19 @@ public class Prato {
 	public void setIdRestaurante(int idRestaurante) {
 		this.idRestaurante = idRestaurante;
 	}
+	/**
+	 * @return the ingredientes
+	 */
+	//public ArrayList<Ingrediente> getIngredientes() {
+		//return ingredientes;
+	//}
+	/**
+	 * @param ingredientes the ingredientes to set
+	 */
+	//public void setIngredientes(ArrayList<Ingrediente> ingredientes) {
+		//this.ingredientes = ingredientes;
+}
 	
 	
 
-}
+
